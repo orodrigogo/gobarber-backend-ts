@@ -17,9 +17,7 @@ sessionsRoutes.post('/', async (request, response) => {
   // removendo o campo password para não mostrar na resposta.
   delete user.password;
 
-
   return response.json({ user, token });
 });
-
 
 export default sessionsRoutes;

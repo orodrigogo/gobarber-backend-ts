@@ -4,10 +4,8 @@ import { getRepository } from 'typeorm';
 
 import AppError from '../errors/AppError';
 
-
 import User from '../models/User';
 import uploadConfig from '../config/upload';
-
 
 interface Request {
   user_id: string;

@@ -6,7 +6,6 @@ import CreateUserService from '../services/CreateUserService';
 import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
-
 const usersRoutes = Router();
 const upload = multer(uploadConfig);
 
@@ -15,7 +14,9 @@ usersRoutes.post('/', async (request, response) => {
 
   const createUser = new CreateUserService();
   const user = await createUser.execute({
-    name, email, password,
+    name,
+    email,
+    password,
   });
 
   // para não retornar a senha do usuário.
@@ -24,18 +25,22 @@ usersRoutes.post('/', async (request, response) => {
   return response.json(user);
 });
 
-usersRoutes.patch('/avatar', ensureAuthenticated, upload.single('avatar'), async (request, response) => {
-  const updateUserAvatar = new UpdateUserAvatarService();
+usersRoutes.patch(
+  '/avatar',
+  ensureAuthenticated,
+  upload.single('avatar'),
+  async (request, response) => {
+    const updateUserAvatar = new UpdateUserAvatarService();
 
-  const user = await updateUserAvatar.execute({
-    user_id: request.user.id,
-    avatarFilename: request.file.filename,
-  });
+    const user = await updateUserAvatar.execute({
+      user_id: request.user.id,
+      avatarFilename: request.file.filename,
+    });
 
-  delete user.password;
+    delete user.password;
 
-  return response.json(user);
-});
-
+    return response.json(user);
+  },
+);
 
 export default usersRoutes;

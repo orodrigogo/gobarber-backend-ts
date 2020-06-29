@@ -12,7 +12,6 @@ const appointmentsRouter = Router();
 // aplicando o middleware para todas as rotas de agendamentos.
 appointmentsRouter.use(ensureAuthenticated);
 
-
 appointmentsRouter.get('/', async (request, response) => {
   const appointmentsRepository = getCustomRepository(AppointmentsRepository);
   const appointments = await appointmentsRepository.find();
@@ -27,10 +26,12 @@ appointmentsRouter.post('/', async (request, response) => {
 
   const createAppointment = new CreateAppointmentService();
 
-  const appointment = await createAppointment.execute({ date: parseDate, provider_id });
+  const appointment = await createAppointment.execute({
+    date: parseDate,
+    provider_id,
+  });
 
   return response.json(appointment);
 });
-
 
 export default appointmentsRouter;
