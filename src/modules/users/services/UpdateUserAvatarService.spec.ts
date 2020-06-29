@@ -75,7 +75,5 @@ describe('UpdateUserAvatar', () => {
 
     // verificando se a função foi executada com o parametro de deletar a imagem antiga.
     expect(deleteFile).toHaveBeenCalledWith('avatar.jpg');
-
-    expect(user.avatar).toBe('avatar.jpg');
   });
 });

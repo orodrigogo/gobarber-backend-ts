@@ -75,6 +75,7 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 - [x] Utilização do Socket.io para envio de notificações em tempo real;
 
 
+
 <div align="center">
   <small>Rodrigo Gonçalves Santana - 2020</small>
 </div>
