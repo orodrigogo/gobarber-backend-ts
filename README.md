@@ -23,6 +23,7 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 **Ferramentas, Técnicas e Bibliotecas** da API:
 
 - [x] Utilização dos Princípios do SOLID;
+- [x] Aplicação da metodologia TDD (Test-driven development);
 - [x] Utilização do [Jest](https://jestjs.io/) para automatização de testes no ambiente de desenvolvimento;
 - [x] Utilização do [tsyringe](https://github.com/microsoft/tsyringe) para automatizar a injeção de dependência.
 
