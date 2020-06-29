@@ -1,6 +1,5 @@
 <div align="center">
   <img src="logo.svg">
-  <h3>GoBarber</h3>
 </div>
 
 
