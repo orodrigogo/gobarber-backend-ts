@@ -61,7 +61,7 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 
 
 
-:books: ### Ferramentas, Técnicas e Bibliotecas da API:
+### Ferramentas, Técnicas e Bibliotecas da API:
 
 - [x] Utilização dos Princípios do SOLID;
 - [x] Aplicação da metodologia TDD (Test-driven development);
