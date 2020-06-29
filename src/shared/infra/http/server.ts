@@ -1,15 +1,19 @@
 import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import 'express-async-errors'; // pacote instalado para tratar os erros assyncronos cair no middleware de tratamento
 
+import uploadConfig from '@config/upload';
+import AppError from '@shared/errors/AppError';
 import routes from './routes';
-import uploadConfig from './config/upload';
 
-import './database';
-import AppError from './errors/AppError';
+import '@shared/infra/typeorm';
+import '@shared/container';
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
 // Para mostrar a imagem.
