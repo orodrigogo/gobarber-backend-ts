@@ -14,10 +14,8 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 
 ### Recursos da API:
 
-#### Recuperação de senha:
 
-
-**Recuperação de senha**
+:lock: **Recuperação de senha**
 
 
 - [x] Permite que um usuário consiga recuperar a senha informando o e-mail cadastrado;
@@ -26,7 +24,8 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 - [x] Cadastro e autenticação de usuários com geração de JwToken;
 - [x] Autenticação de usuários com JwToken;
 
-**Atualização de perfil de usuário**
+
+:busts_in_silhouette: **Atualização de perfil de usuário**
 
 
 - [x] Permite usuário cadastrar-se e atualizar seu perfil (incluindo imagem de avatar);
@@ -34,7 +33,7 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 - [x] Para atualizar a senha, o usuário deve informar a senha antiga e a nova senha;
 
 
-**Painel do Prestador de serviços (Barbeiro)**
+:computer: **Painel do Prestador de serviços (Barbeiro)**
 
 
 - [x] Lista os agendamentos do prestador de serviços de um dia específico;
@@ -47,7 +46,7 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 
 
 
-**Agendamento de serviços**
+:date: **Agendamento de serviços**
 
 
 - [x] O usuário pode listar todos os prestadores de serviços cadastrado;
@@ -62,7 +61,7 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 
 
 
-### Ferramentas, Técnicas e Bibliotecas da API:
+:books: ### Ferramentas, Técnicas e Bibliotecas da API:
 
 - [x] Utilização dos Princípios do SOLID;
 - [x] Aplicação da metodologia TDD (Test-driven development);
