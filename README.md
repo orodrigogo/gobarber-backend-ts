@@ -73,6 +73,7 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 - [x] Upload de imagens com Multer;
 - [x] Utilização do MongoDD para armazenar notificações;
 - [x] Utilização do Socket.io para envio de notificações em tempo real;
+- [x] Utilizado do [Ethereal](https://ethereal.email/) que é um SMTP Fake para testar o envio de e-mails em ambiente de testes;
 
 
 
