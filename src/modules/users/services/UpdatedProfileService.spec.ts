@@ -94,6 +94,16 @@ describe('UpdateProfile', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
+  it('sould not be able to updated the profile from non-existing user', async () => {
+    await expect(
+      updatedProfile.execute({
+        user_id: 'non-existing-user-id',
+        name: 'Rodrigo Santana',
+        email: 'rodrigosantana@email.com',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
   it('sould not be able to updated the password with wrong old password', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Rodrigo Gonçalves',
