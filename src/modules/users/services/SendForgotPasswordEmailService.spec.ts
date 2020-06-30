@@ -23,11 +23,28 @@ describe('SendForgotPasswordEmail', () => {
       password: '123456',
     });
 
-    sendForgotPasswordEmail.execute({
+    await sendForgotPasswordEmail.execute({
       email: 'rodrigo@email.com',
     });
 
     // verificando se a função de envio de email foi chamada.
     expect(sendMail).toHaveBeenCalled();
+  });
+
+  it('sould not be able to recover a non-existing user password', async () => {
+    const fakeUsersRepository = new FakeUsersRepository();
+    const fakeMailProvider = new FakeMailProvider();
+
+    const sendForgotPasswordEmail = new SendForgotPasswordEmailService(
+      fakeUsersRepository,
+      fakeMailProvider,
+    );
+
+    // verificando se a função de envio de email foi chamada.
+    await expect(
+      sendForgotPasswordEmail.execute({
+        email: 'rodrigo@email.com',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
   });
 });
