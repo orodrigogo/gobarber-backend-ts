@@ -10,7 +10,7 @@ let fakeMailProvider: FakeMailProvider;
 let fakeUserTokensRepository: FakeUserTokensRepository;
 let sendForgotPasswordEmail: SendForgotPasswordEmailService;
 
-describe('SendForgotPasswordEmail', () => {
+describe('SendForgotPasswordEmailService', () => {
   // Gatilho do jest antes de cada um dos testes.
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();

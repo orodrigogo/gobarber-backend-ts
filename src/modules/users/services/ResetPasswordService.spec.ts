@@ -10,7 +10,7 @@ let fakeUserTokensRepository: FakeUserTokensRepository;
 let resetPassword: ResetPasswordService;
 let fakeHashProvider: FakeHashProvider;
 
-describe('SendForgotPasswordEmail', () => {
+describe('ResetPasswordService', () => {
   // Gatilho do jest antes de cada um dos testes.
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
@@ -45,5 +45,27 @@ describe('SendForgotPasswordEmail', () => {
     // verificando se a função de envio de email foi chamada.
     expect(generateHash).toHaveBeenCalledWith('123123');
     expect(updatedUser?.password).toBe('123123');
+  });
+
+  it('sould be able to reset the password with non-existing token', async () => {
+    await expect(
+      resetPassword.execute({
+        token: 'non-existing-token',
+        password: '123456',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('sould be able to reset the password with non-existing user', async () => {
+    const { token } = await fakeUserTokensRepository.generate(
+      'non-existing-user',
+    );
+
+    await expect(
+      resetPassword.execute({
+        token,
+        password: '123456',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
   });
 });
