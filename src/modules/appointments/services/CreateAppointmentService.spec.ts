@@ -16,8 +16,12 @@ describe('CreateAppointment', () => {
 
   // it - função do jest para descrever o teste.
   it('sould be able to create a new appointment', async () => {
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 4, 10, 12).getTime();
+    });
+
     const appointment = await createAppointment.execute({
-      date: new Date(),
+      date: new Date(2020, 4, 10, 13),
       provider_id: '1232154',
       user_id: '56789',
     });
@@ -36,11 +40,39 @@ describe('CreateAppointment', () => {
       user_id: '56789',
     });
 
-    expect(
+    await expect(
       createAppointment.execute({
         date: appointmentDate,
         provider_id: '1232154',
         user_id: '56789',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('sould not be able to create an appointments on a paste date', async () => {
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 4, 10, 12).getTime();
+    });
+
+    await expect(
+      createAppointment.execute({
+        date: new Date(2020, 4, 10, 11),
+        provider_id: '1232154',
+        user_id: '56789',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('sould not be able to create an appointments with same user as provider', async () => {
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 4, 10, 12).getTime();
+    });
+
+    await expect(
+      createAppointment.execute({
+        date: new Date(2020, 4, 10, 11),
+        provider_id: '123123',
+        user_id: '123123',
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
