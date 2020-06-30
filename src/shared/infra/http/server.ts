@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 // Para mostrar a imagem.
-app.use('/files', express.static(uploadConfig.directory));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 
 app.use(routes);
 
