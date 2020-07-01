@@ -28,8 +28,6 @@ class ListProvidersServices {
         except_user_id: user_id,
       });
 
-      console.log('A query no banco foi feita');
-
       // criando uma categoria de cache para cada usuario.
       await this.cacheProvider.save(`providers-list:${user_id}`, users);
     }
