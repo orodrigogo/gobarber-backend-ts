@@ -86,6 +86,7 @@ Para banco de dados, foi utilizado o **Postgres** para armazenar os dados que en
 - [x] Utilização do Socket.io para envio de notificações em tempo real;
 - [x] Utilizado do [Ethereal](https://ethereal.email/) que é um SMTP Fake para testar o envio de e-mails em ambiente de testes;
 - [x] Utilizado do [Handlebars](https://handlebarsjs.com/) para template de e-mail em HTML5;
+- [x] Utilização do [Celebrate](https://github.com/arb/celebrate) para validação de dados;
 
 
 

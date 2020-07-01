@@ -2,6 +2,7 @@ import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
+import { errors } from 'celebrate';
 import 'express-async-errors'; // pacote instalado para tratar os erros assyncronos cair no middleware de tratamento
 
 import uploadConfig from '@config/upload';
@@ -20,6 +21,9 @@ app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
 
 app.use(routes);
+
+// captura de erros do celebrate.
+app.use(errors());
 
 // tratativa dos erros tem que vir depois das rotas
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
