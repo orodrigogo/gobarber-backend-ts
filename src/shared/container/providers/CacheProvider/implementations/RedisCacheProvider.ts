@@ -25,8 +25,8 @@ export default class RedisCacheProvider implements ICacheProvider {
     return parseDate;
   }
 
-  public async invalidade(key: string): Promise<void> {
-    throw new Error('Method not implemented.');
+  public async invalidate(key: string): Promise<void> {
+    await this.client.del(key);
   }
 
   public async invalidadePrefix(prefix: string): Promise<void> {
