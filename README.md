@@ -88,6 +88,7 @@ Para banco de dados, foi utilizado o **Postgres** para armazenar os dados que en
 - [x] Utilizado do [Handlebars](https://handlebarsjs.com/) para template de e-mail em HTML5;
 - [x] Utilização do [Celebrate](https://github.com/arb/celebrate) para validação de dados;
 - [x] Utilização da biblioteca [dotEnv](https://www.npmjs.com/package/dotenv) para organizar as variaveis de ambiente da API;
+- [x] Utilização da biblioteca [class-transformer](https://github.com/typestack/class-transformer) para definir os campos que deverão ser excluídos (como senhas) ou configurados (como link do avatar) nas entidades;
 
 
 
