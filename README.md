@@ -5,7 +5,9 @@
 
 
 
-### Sobre
+### Sobre:
+
+
 O **GoBarber** é uma plataforma WEB e MOBILE para agendamentos de serviços de barbearia.
 
 
@@ -62,6 +64,10 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 
 
 ### Ferramentas, Técnicas e Bibliotecas da API:
+
+
+Para banco de dados, foi utilizado o **Postgres** para armazenar os dados que envolvem relacionamentos da regra de negócio da aplicação, **MongoDB** para armazenar as notificações e **Redis** para lidar com filas de processamentos em segundo plano.
+
 
 - [x] Utilização dos Princípios do SOLID;
 - [x] Aplicação da metodologia TDD (Test-driven development);
