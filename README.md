@@ -63,10 +63,15 @@ A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e
 
 
 
-### Ferramentas, Técnicas e Bibliotecas da API:
+### Banco de Dados e estratégias de armazenamento:
 
 
 Para banco de dados, foi utilizado o **Postgres** para armazenar os dados que envolvem relacionamentos da regra de negócio da aplicação, **MongoDB** para armazenar as notificações e **Redis** para lidar com filas de processamentos em segundo plano.
+
+
+
+### Ferramentas, Técnicas e Bibliotecas da API:
+
 
 
 - [x] Utilização dos Princípios do SOLID;
