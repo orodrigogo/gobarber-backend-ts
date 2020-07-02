@@ -92,7 +92,7 @@ Para banco de dados, foi utilizado o **Postgres** para armazenar os dados que en
 - [x] Utilização do driver [ioredis](https://github.com/luin/ioredis) para utilizar o Redis como cache de dados;
 - [x] Utilização do [node-rate-limiter-flexible](https://github.com/animir/node-rate-limiter-flexible) para blindar a API contra ataques brute force;
 - [x] Utilização da **Amazon S3** para upload de imagens;
-
+- [x] Utilização da biblioteca [Mime](https://github.com/broofa/mime) para pegar o MIME extensão do arquivo (Ex: 'application/json', 'image/jpeg');
 
 <div align="center">
   <small>Rodrigo Gonçalves Santana - 2020</small>
