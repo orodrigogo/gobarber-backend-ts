@@ -14,6 +14,17 @@ O **GoBarber** é uma plataforma WEB e MOBILE para agendamentos de serviços de 
 A API do **GoBarber** serve a plataforma WEB e Mobile disponível para Android e iOS. :iphone:
 
 
+### Importar rotas da aplicação:
+
+Todas as rotas foram testadas utilizando o o do [Insomnia](https://insomnia.rest/download/). Para importar as rotas testadas para o Insomnia clique no botão:
+
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=GoBarber&uri=https%3A%2F%2Fraw.githubusercontent.com%2Frodrigorgtic%2Fbackend-gobarber-typescript%2Fmaster%2Finsomnia-api-routes.json)
+
+
+
+
+
 ### Recursos da API:
 
 
