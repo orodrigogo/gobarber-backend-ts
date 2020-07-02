@@ -1,4 +1,4 @@
-import './MailProvider';
 import './MailTemplateProvider';
+import './MailProvider';
 import './StorageProvider';
 import './CacheProvider';
