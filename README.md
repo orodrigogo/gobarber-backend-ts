@@ -91,6 +91,7 @@ Para banco de dados, foi utilizado o **Postgres** para armazenar os dados que en
 - [x] Utilização da biblioteca [class-transformer](https://github.com/typestack/class-transformer) para definir os campos que deverão ser excluídos (como senhas) ou configurados (como link do avatar) nas entidades;
 - [x] Utilização do driver [ioredis](https://github.com/luin/ioredis) para utilizar o Redis como cache de dados;
 - [x] Utilização do [node-rate-limiter-flexible](https://github.com/animir/node-rate-limiter-flexible) para blindar a API contra ataques brute force;
+- [x] Utilização da **Amazon S3** para upload de imagens;
 
 
 <div align="center">
