@@ -30,7 +30,7 @@ class S3StorageProvider implements IStorageProvider {
 
     await this.client
       .putObject({
-        Bucket: 'app-gobarbers3',
+        Bucket: uploadConfig.config.aws.bucket,
         Key: file,
         ACL: 'public-read',
         Body: fileContent,
@@ -38,6 +38,9 @@ class S3StorageProvider implements IStorageProvider {
         ContentDisposition: `inline; filename=${file}`,
       })
       .promise();
+
+    // deletando o arquivo da pasta temporária.
+    await fs.promises.unlink(originalPath);
 
     return file;
   }
