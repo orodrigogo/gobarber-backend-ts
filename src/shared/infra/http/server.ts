@@ -16,12 +16,14 @@ import '@shared/container';
 
 const app = express();
 
-app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
 
 // Para mostrar a imagem.
 app.use('/files', express.static(uploadConfig.uploadsFolder));
+
+// Coloquei depois da rota que carrega arquivo, para não bloquear quando solicitar várias imagens.
+app.use(rateLimiter);
 
 app.use(routes);
 
