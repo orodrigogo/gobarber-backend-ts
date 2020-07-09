@@ -3,6 +3,7 @@ import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICa
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import User from '@modules/users/infra/typeorm/entities/User';
+import { classToClass } from 'class-transformer';
 
 interface IRequest {
   user_id: string;
@@ -29,7 +30,10 @@ class ListProvidersServices {
       });
 
       // criando uma categoria de cache para cada usuario.
-      await this.cacheProvider.save(`providers-list:${user_id}`, users);
+      await this.cacheProvider.save(
+        `providers-list:${user_id}`,
+        classToClass(users),
+      );
     }
 
     return users;
