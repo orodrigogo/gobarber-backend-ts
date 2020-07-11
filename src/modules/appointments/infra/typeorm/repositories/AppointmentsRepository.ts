@@ -71,6 +71,9 @@ class AppointmentsRepository implements IAppointmentsRepository {
     const parseDay = String(day).padStart(2, '0');
     const parseMonth = String(month).padStart(2, '0');
 
+    console.log(parseDay);
+    console.log(parseMonth);
+
     const appointments = await this.ormRepository.find({
       where: {
         provider_id,
